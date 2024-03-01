@@ -1,3 +1,8 @@
+import Navigation from "../../components/navigation";
+
 export default function AboutUs(){
-    return <h1>about us</h1>
+    return <>
+        <Navigation/>
+        <h1>about us</h1>
+    </>
 }
