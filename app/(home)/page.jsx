@@ -1,11 +1,23 @@
+import Link from "next/link"
 
 export const metadata = {
     title: 'Home',
-    description: 'the best movies on the best framework',
+}
+export const URL = 'https://nomad-movies.nomadcoders.workers.dev/movies'
+
+async function getMovies(){
+    await new Promise((resolve)=>setTimeout(resolve,1000))
+    const response =await fetch(URL)
+    const json = await response.json()
+    return json
 }
 
-export default function Tomato(){
-    return <>
-        <h1>hello</h1>
-    </>
+export default async function HomePage(){
+    
+    const movies = await getMovies()
+    return (
+        <>
+            {movies.map(movie => <li key={movie.id}><Link href={`/movies/${movie.id}`}>{movie.title}</Link></li>)}
+        </>
+    )
 }
