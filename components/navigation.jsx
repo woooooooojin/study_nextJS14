@@ -9,8 +9,10 @@ export default function Navigation() {
   return (
     <nav className={styles.nav}>
         <ul>
-            <li><Link href="/">Home</Link></li>{path === '/' ? '@' : ""}
-            <li><Link href="/about-us">About Us</Link></li>{path === '/about-us' ? '@' : ""}
+          {path === '/' ? <li style={{color : 'red'}}><Link href="/">Home</Link></li> : <li><Link href="/">Home</Link></li>}
+            
+          {path === '/about-us' ? <li style={{color : 'red'}}><Link href="/about-us">About Us</Link></li> : <li><Link href="/about-us">About Us</Link></li> }
+          
         </ul>
     </nav>
   )
