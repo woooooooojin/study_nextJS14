@@ -8,7 +8,6 @@ export default function RootLayout({ children }) {
       <div>
 
         {children}
-        &copy; Next JS is great!
       </div>
   )
 }
